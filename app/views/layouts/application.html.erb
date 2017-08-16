@@ -2,10 +2,11 @@
 <html>
   <head>
     <title>Splurty</title>
-    <%= csrf_meta_tags %>
 
+    <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
@@ -14,24 +15,28 @@
 
       <div class="col-3">
 
-        <div class="circle">
+        <%= link_to root_path, class: 'logo' do %>    
 
-          <br />
+          <div class="circle">
 
-          WE
+            <br />
 
-          <br />
+            WE
 
-          LOVE
+            <br />
 
-          <br />
+            LOVE
 
-          LEAGUE
+            <br />
 
-        </div>
+            LEAGUE
 
+          </div>
+
+        <% end %>
 
       </div>
+
       <div class="col-4 slogan">
         
         Reason's why we love League of Legends oh so much!
@@ -39,11 +44,12 @@
       </div>
 
       <div class="col-5 links">
-        <%= link_to 'Contribute', '#' %>
+
+        <%= link_to 'Contribute', new_quote_path %>
         <%= link_to 'About', '#' %>
 
-
       </div>
+
     </header>
 
     <hr />
@@ -51,7 +57,9 @@
     <br class="clear" />
     
     <div class="container">
+
       <%= yield %>
+
     </div>
     
     <div class="footer">
@@ -61,12 +69,16 @@
           <div class="row">
 
             <div class="col-6 ">
-                <%= link_to "This isn't enough, I need more.", "#", class: 'next-quote' %>
+
+                <%= link_to "This didn't tilt me enough, I need more.", root_path, class: 'next-quote' %>
             </div>
 
             <dir class="col-6 footer-blurb">
+
               Proudly hacked by a Gold player, Derek M
+
             </dir>
+            
           </div>
 
         </div>
