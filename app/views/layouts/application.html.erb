@@ -13,26 +13,15 @@
   </head>
 
   <body>
-
+ 
     <header class="row">
 
-      <div class="col-3">
+      <div class="col-3 gnar">
 
         <%= link_to root_path, class: 'logo' do %>    
-
-          <div class="circle">
-
-            <br />
-
-            WE
-
-            <br />
-
-            LOVE
-
-            <br />
-
-            LEAGUE
+        
+          <%= image_tag 'gnar.jpg', class: 'img-fluid' %>
+          <h3>WE LOVE LEAGUE</h3>
 
           </div>
 
@@ -49,7 +38,7 @@
       <div class="col-5 links">
 
         <%= link_to 'Contribute', new_quote_path %>
-        <%= link_to 'About', '#' %>
+        <%= link_to 'About', about_path %>
 
       </div>
 
@@ -82,7 +71,7 @@
 
             <div class="col-6 ">
 
-                <%= link_to "This didn't tilt me enough, I need more.", root_path, class: 'next-quote' %>
+                <%= link_to "This didn't tilt me enough, I need more!!!", root_path, class: 'next-quote' %>
             </div>
 
             <dir class="col-6 footer-blurb">
