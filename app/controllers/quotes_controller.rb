@@ -5,12 +5,6 @@ class QuotesController < ApplicationController
 
   end
 
-  def new
-
-    @quote = Quote.new
-
-  end
-
   def create
 
     @quote = Quote.create(quote_params)
@@ -21,15 +15,15 @@ class QuotesController < ApplicationController
 
   end
 
+  def about
+
+  end
+
   private
 
   def quote_params
 
     params.require(:quote).permit(:saying, :author)
-
-  end
-
-  def about
 
   end
 
