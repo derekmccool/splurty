@@ -1,49 +1,32 @@
 <!DOCTYPE html>
 
 <html>
-
   <head>
-
-    <title>Splurty</title>
-
+    <title>What Tilts You?</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
   </head>
 
   <body>
- 
-    <header class="row">
-
+     <header class="row">
       <div class="col-3 gnar">
-
         <%= link_to root_path, class: 'logo' do %>    
-        
           <%= image_tag 'gnar.jpg', class: 'img-fluid' %>
           <h3>WE LOVE LEAGUE</h3>
-
           </div>
-
         <% end %>
-
       </div>
-
-      <div class="col-4 slogan">
-        
+      <div class="col col-sm-4 hidden-xs-down slogan">
         Reason's why we love League of Legends oh so much!
-
       </div>
-
-      <div class="col-5 links">
+      <div class="col-10 offset-1 offset-sm-0 col-sm-5 links">
         <!-- Button trigger modal -->
         <%= link_to 'Contribute', '#', data:{toggle: 'modal', target: '#myModal'} %>
+        &nbsp;&nbsp;
         <%= link_to 'About', about_path %>
-
       </div>
-
     </header>
-
    
     <!--Modal -->
 
@@ -58,8 +41,9 @@
           </div>
           <%= simple_form_for Quote.new do |f| %>
             <div class="modal-body">
-              <%= f.input :saying %>
-              <%= f.input :author %>
+              <%= f.input :saying, label: "What is the reason you tilt?", placeholder: "Yasuo players." %>
+              <br />
+              <%= f.input :author, label: "Summoner Name", placeholder: "Everyone" %>
             </div>
             <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -69,49 +53,27 @@
         </div>
       </div>
     </div>
-
     <hr />
-
     <br class="clear" />
-    
     <div class="container">
       <% if flash[:error].present? %>
-
         <div class="col-10 offset-1 alert alert-danger">
-
           <%= flash[:error].html_safe %>
-
         </div>
-
       <% end %>
-
       <%= yield %>
-
     </div>
-    
-    <div class="footer">
-
+      <div class="footer">
         <div class="container">
-
           <div class="row">
-
-            <div class="col-6 ">
-
+            <div class="col-12 col-sm-6">
                 <%= link_to "This didn't tilt me enough, I need more!!!", root_path, class: 'next-quote' %>
             </div>
-
-            <dir class="col-6 footer-blurb">
-
+            <dir class="col-12 col-sm-6 footer-blurb">
               Proudly hacked by a Gold player, Derek M
-
             </dir>
-
           </div>
-
         </div>
-
     </div>  
-
   </body>
-
 </html>
